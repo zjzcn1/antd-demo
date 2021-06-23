@@ -55,6 +55,13 @@
           <a-breadcrumb-item><a href="">Application List</a></a-breadcrumb-item>
           <a-breadcrumb-item>An Application</a-breadcrumb-item>
         </a-breadcrumb>
+
+        <div style="float: right; margin-right: 24px">
+          <div style="display: inline-block">
+            <user-outlined />
+            <span style="margin-left: 8px">张三</span>
+          </div>
+        </div>
       </a-layout-header>
       <a-layout-content style="height: calc(100vh - 120px); overflow: hidden auto;">
         <div style="background: #fff; margin: 24px; height: 500px">hehe</div>
