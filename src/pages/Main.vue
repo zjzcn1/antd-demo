@@ -1,7 +1,7 @@
 <template>
   <a-layout>
     <a-layout-sider v-model:collapsed="collapsed" width="240" :trigger="null" collapsible>
-      <a-layout-header style="background-color: #002140; padding-left: 22px">
+      <a-layout-header style="padding-left: 22px">
           <img style="height: 30px; width: 30px ; vertical-align: middle;" src="../assets/logo.png"/>
           <span style="padding-left: 24px; color: #fff; font-size: 18px; font-weight: 400;">{{collapsed?'':'测试系统'}}</span>
       </a-layout-header>
