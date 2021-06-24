@@ -11,7 +11,7 @@
                 <a-col :lg="12" :md="12" :sm="24" :xl="12" :xs="24">
                     <div class="error-text">
                         <div class="error-text-headline">您没有操作权限...</div>
-                        <div class="error-text-info">当前帐号没有操作角色,请联系管理员。</div>
+                        <div class="error-text-info">当前帐号没有操作权限,请联系管理员。</div>
                     </div>
                 </a-col>
             </a-row>
