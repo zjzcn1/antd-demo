@@ -51,7 +51,7 @@
                 </div>
             </a-layout-header>
             <a-layout-content class="content">
-                <div style="background: #fff; margin: 24px; height: 500px">
+                <div class="container">
                     <router-view></router-view>
                 </div>
             </a-layout-content>
@@ -74,6 +74,8 @@
 
 <style lang="less" scoped>
 
+    @header_height: 50px;
+
     .scrollbar() {
         overflow-y: auto;
         overflow-x: hidden;
@@ -89,8 +91,8 @@
     .logo {
         background: #fff;
         padding: 0;
-        height: 50px;
-        line-height: 50px;
+        height: @header_height;
+        line-height: @header_height;
         box-shadow: 0 2px 6px 0 rgb(124 104 104 / 10%);
         margin-right: 1px;
 
@@ -110,8 +112,8 @@
 
     .menu {
         .scrollbar();
-        height: calc(100vh - 64px);
         margin-top: 2px;
+        height: calc(100vh - @header_height - 2px);
     }
 
     .header {
@@ -144,7 +146,13 @@
 
     .content {
         .scrollbar();
-        height: calc(100vh - 64px);
+        height: calc(100vh - @header_height);
+
+        .container {
+            background: #fff;
+            margin: 24px;
+            height: calc(100vh - @header_height - 48px);
+        }
     }
 
 </style>
