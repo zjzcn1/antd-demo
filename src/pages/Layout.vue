@@ -1,11 +1,11 @@
 <template>
     <a-layout>
-        <a-layout-sider v-model:collapsed="collapsed" theme="light" :trigger="null" width="240" collapsible>
+        <a-layout-sider v-model:collapsed="collapsed" :trigger="null" width="240" collapsible>
             <a-layout-header class="logo">
                 <img src="../assets/logo.png"/>
                 <span>{{collapsed ? '' : '测试系统'}}</span>
             </a-layout-header>
-            <a-menu class="menu" mode="inline" v-model:selectedKeys="selectedKeys">
+            <a-menu class="menu" theme="dark" mode="inline" v-model:selectedKeys="selectedKeys">
                 <template v-for="(item, index) in $router.options.routes">
                     <a-sub-menu :index="item.path + index" :key="index"
                                 v-if="!item.meta.hidden && !item.meta.leaf">
@@ -89,12 +89,9 @@
     }
 
     .logo {
-        background: #fff;
         padding: 0;
         height: @header_height;
         line-height: @header_height;
-        box-shadow: 0 2px 6px 0 rgb(124 104 104 / 10%);
-        margin-right: 1px;
 
         img {
             margin-left: 22px;
@@ -107,13 +104,13 @@
             padding-left: 24px;
             font-size: 18px;
             font-weight: 400;
+            color: #fff;
         }
     }
 
     .menu {
         .scrollbar();
-        margin-top: 2px;
-        height: calc(100vh - @header_height - 2px);
+        height: calc(100vh - @header_height);
     }
 
     .header {
