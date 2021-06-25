@@ -1,11 +1,11 @@
 <template>
     <a-layout>
-        <a-layout-sider v-model:collapsed="collapsed" width="240" collapsible>
+        <a-layout-sider v-model:collapsed="collapsed" theme="light" :trigger="null" width="240" collapsible>
             <a-layout-header class="logo">
                 <img src="../assets/logo.png"/>
                 <span>{{collapsed ? '' : '测试系统'}}</span>
             </a-layout-header>
-            <a-menu class="menu" theme="dark" mode="inline" v-model:selectedKeys="selectedKeys">
+            <a-menu class="menu" mode="inline" v-model:selectedKeys="selectedKeys">
                 <template v-for="(item, index) in $router.options.routes">
                     <a-sub-menu :index="item.path + index" :key="index"
                                 v-if="!item.meta.hidden && !item.meta.leaf">
@@ -87,7 +87,12 @@
     }
 
     .logo {
+        background: #fff;
         padding: 0;
+        height: 50px;
+        line-height: 50px;
+        box-shadow: 0 2px 6px 0 rgb(124 104 104 / 10%);
+        margin-right: 1px;
 
         img {
             margin-left: 22px;
@@ -98,7 +103,6 @@
 
         span {
             padding-left: 24px;
-            color: #fff;
             font-size: 18px;
             font-weight: 400;
         }
@@ -106,20 +110,23 @@
 
     .menu {
         .scrollbar();
-        height: calc(100vh - 64px)
+        height: calc(100vh - 64px);
+        margin-top: 2px;
     }
 
     .header {
         background: #fff;
         padding: 0;
+        height: 50px;
+        line-height: 50px;
+        box-shadow: 0 2px 6px 0 rgb(124 104 104 / 10%);
 
         > * {
             display: inline-block
         }
 
         .collapse-icon {
-            font-size: 18px;
-            line-height: 64px;
+            font-size: 16px;
             padding: 0 24px;
             cursor: pointer;
             transition: color 0.3s;
